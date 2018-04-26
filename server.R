@@ -170,38 +170,7 @@ shinyServer(function(input, output, session) {
         scale_y_continuous(expand=c(0,0)))
   })
   
-  output$month_waffle <- renderPlot({
-    print(ggplot(monthly, aes(x=a_date_mon, y=a_date_yr, fill=n)) +
-      geom_tile(col="white") + scale_fill_continuous(low="grey80", high="grey10") +
-      theme_minimal() + scale_x_discrete(expand=c(0,0), 
-        labels=substr(month.abb, 1, 1)) +
-      labs(x=NULL, y=NULL, fill="Incidents") +
-      theme(axis.ticks.x=element_blank(),
-        axis.ticks.y=element_blank(),
-        axis.text.y=element_text(hjust=0),
-        axis.text.x=element_text(vjust=0)))
-  })
-  
-  
-  output$involving <- renderPlot({
-    types <- getData() %>% group_by(acc_type) %>% tally()
-    
-    types$lab <- factor(with(types, ifelse(acc_type == "M.V.N.P.", "Multiple vehicles",
-      ifelse(acc_type == "S.V.N.P.", "Single vehicle",
-        ifelse(acc_type == "T.V.N.P.", "Two vehicles", as.character(acc_type))))))
-    
-    types$lab <- factor(types$lab, levels=levels(types$lab)[c(5:6, 3, 1:2, 4)])
-    
-    print(ggplot(types, aes(x=lab, y=n/sum(n))) +
-        geom_bar(stat="identity", position=position_stack()) +
-        theme_minimal() + labs(y="Percent collisions involved", x=NULL) +
-        scale_y_continuous(expand=c(0,0), labels=scales::percent) +
-        theme(axis.text.y=element_text(hjust=1)) + #, colour = "white")) +
-        coord_flip())
-  })
-  
-  
-  
+
   output$table <- DT::renderDataTable({
     action <- dataTableAjax(session, clean)
     DT::datatable(clean, filter = 'top', options = list(
