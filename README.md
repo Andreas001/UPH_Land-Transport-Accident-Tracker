@@ -13,7 +13,9 @@ Features: -Plotting accident on map (using leaflet)
 
 - Fill data on table (using DT)
 
--About panel (using shiny)
+- About panel (using shiny)
+
+![captionscreenshot](https://meysaayamaken.files.wordpress.com/2017/09/shinamashirokuudere-1936253054.jpg)
 
 What we added: - Marker plot (colorized plot based on accident severity)
 
