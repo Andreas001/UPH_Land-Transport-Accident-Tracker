@@ -39,6 +39,9 @@ $( 'div#mymap' ).append(spinner.el);"),
             dateRangeInput('dates',
               label = 'Occurred between:',
               start = as.Date("2010-01-01"), end = as.Date("2013-07-01")),
+                   
+                   selectInput("color", "Marker:",
+              choices=c("None", "Severity")),
 
             sliderInput("alpha", label="Opacity:",
               min=0, max=1, value=0.4, step=.025, ticks=T),
@@ -51,11 +54,11 @@ $( 'div#mymap' ).append(spinner.el);"),
 
               column(6,
                 selectInput("scale", label="Scale by:", width=120,
-                  selected="Vehicles", choices=c("Casualties", "Vehicles"))#)
+                  selected="Vehicles", 
+               choices=c("Casualties", "Vehicles"))#)
               )
             ),
-                     selectInput("color", "Colour by:",
-              choices=c("None", "Severity")),
+                     
             
                    
          
