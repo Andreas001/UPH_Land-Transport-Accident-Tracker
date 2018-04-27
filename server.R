@@ -1,10 +1,13 @@
+#Load the necessary libraries
 library("dplyr")
 library("DT")
 library("ggplot2")
 library("htmltools")
 library("leaflet")
-#library("rcharts")
 library("shiny")
+
+#Dont mind this one:
+#library("rcharts")
 
 accidents <- readRDS("data/accidents.rds")
 #accidents <- accidents[sample(1:nrow(accidents), 3000),]
@@ -58,6 +61,7 @@ monthly <- accidents %>% group_by(a_date_yr, a_date_mon) %>% tally()
 monthly$a_date_mon <- factor(monthly$a_date_mon, levels=month.name, ordered=T)
 monthly$a_date_yr <- factor(paste0("20",monthly$a_date_yr), levels=2013:2010)
 
+#Server-------------------------------------------------------------------------------------------------------------------------------
 shinyServer(function(input, output, session) {
   
   getData <- reactive({
@@ -68,7 +72,8 @@ shinyServer(function(input, output, session) {
     #message("alpha changed : ", input$alpha)
     input$alpha
   })
-  
+
+#Note
 #   getZoom <- reactive({
 #     input$mymap_zoom
 #   })
@@ -103,7 +108,7 @@ shinyServer(function(input, output, session) {
   })
   
   observe({
-    # modify map of changed input i.e. colour by
+    #modify map of changed input i.e. colour by
     ax <- getData()
     title <- legend_hdr(input$color)
 
@@ -124,12 +129,6 @@ shinyServer(function(input, output, session) {
           return(colorFactor("Set1", domain=ax[[col$var]]))
         }} else return( function(...) "black" )
     }
-    
-    # TODO ::
-    # as zoom increases, point sizes decrease,
-    # instead, increase points with zoom size
-    # zoom <- getZoom()
-    # message(zoom)
     
     if(col$var == "none"){
       l <- leafletProxy("mymap", session, data=ax) %>%
@@ -153,7 +152,7 @@ shinyServer(function(input, output, session) {
     }
   })
   
-  # -- Map mobile controls back to main panel -- #
+  #Control / Setting panel
   observe({
     updateSelectInput(session, "color", selected=input$color_mob)
   })
