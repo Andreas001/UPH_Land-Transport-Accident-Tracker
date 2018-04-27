@@ -53,9 +53,10 @@ $( 'div#mymap' ).append(spinner.el);"),
                 selectInput("scale", label="Scale by:", width=120,
                   selected="Vehicles",)#)
               )
+            ),
                      selectInput("color", "Colour by:",
               choices=c("None", "Severity")),
-            ),
+            
                    
          
             hr(class="thin"),
