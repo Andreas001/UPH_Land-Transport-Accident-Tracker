@@ -1,10 +1,10 @@
 #Load the necessary libraries
-library("dplyr")
-library("DT")
-library("ggplot2")
-library("htmltools")
-library("leaflet")
-library("shiny")
+library(dplyr)
+library(DT)
+library(ggplot2)
+library(htmltools)
+library(leaflet)
+library(shiny)
 
 #Dont mind this one:
 #library("rcharts")
