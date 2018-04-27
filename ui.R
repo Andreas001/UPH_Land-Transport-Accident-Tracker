@@ -35,17 +35,12 @@ $( 'div#mymap' ).append(spinner.el);"),
 
         tabsetPanel(
           tabPanel("Controls",
-                   
-            dateRangeInput('dates',
--              label = 'Occurred between:',
--              start = as.Date("2010-01-01"), end = as.Date("2013-07-01")),
+
            
 
             selectInput("color", "Colour by:",
               choices=c("None", "Severity")),
-                   
-               sliderInput("alpha", label="Opacity:",
--              min=0, max=1, value=0.4, step=.025, ticks=T),
+
             
             hr(class="thin"),
             p("Under development by",
