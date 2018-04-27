@@ -1,8 +1,8 @@
 #Load the libraries needed in this code
-library("dplyr")
-library("DT")
-library("shiny")
-library("leaflet")
+library(dplyr)
+library(DT)
+library(shiny)
+library(leaflet)
 
 #UI-------------------------------------------------------------------------------------------------------------------------------------
 shinyUI(navbarPage("Accident tracker", id="nav", collapsible=T,
