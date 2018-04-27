@@ -166,7 +166,7 @@ shinyServer(function(input, output, session) {
     
     print(ggplot(d2, aes(x=zoo::as.Date(zoo::as.yearmon(ym)), y=n)) + 
         geom_area() + theme_minimal() + 
-        labs(x=NULL, y="Incidents\nper month") +
+        labs(x=NULL, y="Incidents\nper year") +
         scale_y_continuous(expand=c(0,0)))
   })
   
