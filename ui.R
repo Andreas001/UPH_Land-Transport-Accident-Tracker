@@ -51,7 +51,7 @@ $( 'div#mymap' ).append(spinner.el);"),
 
               column(6,
                 selectInput("scale", label="Scale by:", width=120,
-                  selected="Vehicles",)#)
+                  selected="Vehicles")#)
               )
             ),
                      selectInput("color", "Colour by:",
