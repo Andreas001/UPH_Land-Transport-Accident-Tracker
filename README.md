@@ -2,13 +2,13 @@
 
 # Final project
 
-
+#
 
 Acknowledgement : 
 
 Forked from -> https://github.com/blmoore/blackspot
 
-
+#
 
 Associates:
 
@@ -16,13 +16,13 @@ github.com/Tom112151
 
 github.com/Andreas001
 
-
+#
 
 Description:
 
 The shiny app main features are tracking and showing where land transport related accidents happened in the city Edinburgh using black dots that gets larger depending on the scale of the accident. It also features a control panel / setting panel that can be used to plot the accidents by date, change the opacity (intensity of the dot color), show graphs, and also showing what the app is about. The app also features another tab where the data used for the plotting can be viewed, sort by severity/date/day/etc, and a search function.
 
-
+#
 
 What we changed:
 
