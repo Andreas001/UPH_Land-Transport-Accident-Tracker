@@ -51,13 +51,13 @@ Simply copy and paste these in the R console:
 
 - install.packages("htmltools")
 
-
+#
 
 After that is done copy and paste this into the console
 
 shiny::runGitHub("Andreas001/UPH_Land-Transport-Accident-Tracker")
 
-
+#
 
 #Further details
 
