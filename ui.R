@@ -1,10 +1,11 @@
+#Load the libraries needed in this code
 library("dplyr")
 library("DT")
 library("shiny")
 library("leaflet")
 
-
-shinyUI(navbarPage("Blackspot", id="nav", collapsible=T,
+#UI-------------------------------------------------------------------------------------------------------------------------------------
+shinyUI(navbarPage("Accident tracker", id="nav", collapsible=T,
   tabPanel("Map",
     div(class="outer",
 
@@ -27,7 +28,7 @@ $( 'div#mymap' ).append(spinner.el);"),
 
         h2(),
         p(class="intro",
-          strong("Blackspot"), " shows vechicle collisions in",
+          strong("Accident tracker"), " shows vechicle collisions in",
           "the city of Edinburgh, UK. Data from",
           a("Edinburgh Open Data.",
             href="http://www.edinburghopendata.info/dataset/vehicle-collisions",
@@ -63,11 +64,11 @@ $( 'div#mymap' ).append(spinner.el);"),
                    
          
             hr(class="thin"),
-            p("Under development by",
-              a("@benjaminlmoore", href="http://twitter.com/benjaminlmoore",
+            p("Modified by",
+              a("Andreas, Thompson, Jerry", href="github.com/Andreas001 or Tom112151",
                 target="_blank"),
               HTML("&bull;"), "See the code on ",
-              a("github", href="http://github.com/blmoore/blackspot",
+              a("github", href="http://github.com/Andreas001/UPH_Land-Transport-Accident-Tracker",
                 target="_blank"),
               class="foot")
           ),
@@ -84,7 +85,7 @@ $( 'div#mymap' ).append(spinner.el);"),
             p(class="topp", "Explore vehicle collisions recorded in Edinburgh",
               "between 2010 and 2013 in this interactive data visualisation."
               ),
-            p("Blackspot is written in ",
+            p("This is written in ",
               a("Shiny,", href="http://shiny.rstudio.com/", target="_blank"),
               "a web application framework for the R language.",
               "Maps are built with ",
@@ -96,16 +97,16 @@ $( 'div#mymap' ).append(spinner.el);"),
               a("Open Street Map.", href="http://www.openstreetmap.org/copyright",
                 target="_blank")
               ),
-            p("Project under development by ",
-              a("@benjaminlmoore", href="http://twitter.com/benjaminlmoore",
+            p("Project modified by ",
+              a("@Andreas, Thompson, Jerry", href="http://twitter.com/benjaminlmoore",
                 target="_blank"),
               HTML("&mdash;"),
               "see the full code on ",
-              a("github", href="http://github.com/blmoore/blackspot",
+              a("github", href="http://github.com/Andreas001/UPH_Land-Transport-Accident-Tracker",
                 target="_blank"),
               "or run locally with:"
             ),
-            pre("shiny::runGitHub('blmoore/blackspot')"),
+            pre("shiny::runGitHub('Andreas001/UPH_Land-Transport-Accident-Tracker')"),
             hr(class="thin")
           )
           # end about panel
@@ -120,13 +121,13 @@ $( 'div#mymap' ).append(spinner.el);"),
 
       ),
 
-      # mobile panel
+      #Control / setting panel
       div(class="mobile-panel",
         p(strong("Blackspot"), " shows vechicle collisions in",
-          "the city of Edinburgh, UK. Written in R Shiny by",
-          a("@benjaminlmoore,", href="https://twitter.com/benjaminlmoore"),
+          "the city of Edinburgh, UK. Original & modified by",
+          a("github.com/blmmoore", href="/Andreas001 & /Tom112151"),
           "see the code on ",
-          a("github.", href="http://github.com/blmoore/blackspot"),
+          a("github.", href="http://github.com/Andreas001/UPH_Land-Accident-Tracker"),
           "Data: ",
           a("Edinburgh Open Data.",
             href="http://www.edinburghopendata.info/dataset/vehicle-collisions")),
@@ -136,8 +137,6 @@ $( 'div#mymap' ).append(spinner.el);"),
         radioButtons("color_mob", "Colour by:", inline=T,
           choices=c("None", "Severity", "Casualties", "Time", "Vehicles", "Speed limit"))
       )
-      # tags$div(id="cite",
-      #  a("@benjaminlmoore", href="http://twitter.com/benjaminlmoore"))
     )
   ), tabPanel("Table", DT::dataTableOutput("table"))
 )
