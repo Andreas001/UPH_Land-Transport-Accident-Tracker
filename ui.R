@@ -74,7 +74,7 @@ $( 'div#mymap' ).append(spinner.el);"),
 
           tabPanel("Graphs",
             #p("Static plots"),
-            plotOutput("monthTotals", height = "110px"),
+            plotOutput("monthTotals", height = "200px"),
             plotOutput("month_waffle", height = "120px"),
             #hr(),
             plotOutput("involving", height = "120px", width="100%"),
