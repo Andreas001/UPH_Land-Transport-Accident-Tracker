@@ -45,9 +45,8 @@ $( 'div#mymap' ).append(spinner.el);"),
 
             sliderInput("alpha", label="Opacity:",
               min=0, max=1, value=0.4, step=.025, ticks=T),
-
-            ),
-
+                   
+         
             hr(class="thin"),
             p("Under development by",
               a("@benjaminlmoore", href="http://twitter.com/benjaminlmoore",
