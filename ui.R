@@ -40,11 +40,22 @@ $( 'div#mymap' ).append(spinner.el);"),
               label = 'Occurred between:',
               start = as.Date("2010-01-01"), end = as.Date("2013-07-01")),
 
-            selectInput("color", "Colour by:",
-              choices=c("None", "Severity")),
-
             sliderInput("alpha", label="Opacity:",
               min=0, max=1, value=0.4, step=.025, ticks=T),
+                   
+                   fluidRow(
+              column(6,
+                sliderInput("base", label="Point size:",
+                  min=1, max=5, value=1)
+              ),
+
+              column(6,
+                selectInput("scale", label="Scale by:", width=120,
+                  selected="Vehicles",)#)
+              )
+                     selectInput("color", "Colour by:",
+              choices=c("None", "Severity")),
+            ),
                    
          
             hr(class="thin"),
