@@ -1,17 +1,23 @@
 # blackspot
-[![docker automated](https://img.shields.io/docker/automated/blmoore/blackspot.svg)](https://hub.docker.com/r/blmoore/blackspot/)
 
 Shiny app exploring Edinburgh traffic collision data. View from R with: 
 
-```r
-shiny::runGitHub("blmoore/blackspot")
-```
 
-Or use docker (view at http://localhost:3838):
+shiny::runGitHub("Tom112151/blackspot")
 
-```
-docker run -dp 3838:3838 blmoore/blackspot
-```
+Original code: https://github.com/blmoore/blackspot
 
-Note `analytics.js` contains my Google analytics tracking code, you'll want to comment this out (i.e. `includeScript("analytics.js")` in `ui.R`) or swap in your own code if you're deploying this app!
+Features: -Plotting accident on map (using leaflet)
+
+- Plot size according to vehicles involved (using ggplot)
+
+- Fill data on table (using DT)
+
+-About panel (using shiny)
+
+What we added: - Marker plot (colorized plot based on accident severity)
+
+- Sliders (Plot opacity and size)
+
+- Graph of accidents per year 
 
